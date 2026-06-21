@@ -1,3 +1,8 @@
 spring:
   application:
     name: engine
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver #Explicit driver class. Not relying on auto-detection.
