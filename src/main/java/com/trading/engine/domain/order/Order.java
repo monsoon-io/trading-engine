@@ -17,15 +17,15 @@ public class Order {
 
     public Order(String orderId, Instrument instrument, OrderSide side, BigDecimal price, long quantity) {
         if(orderId == null)
-            throw new IllegalArgumentException("orderId cannot be null");
+            throw new IllegalArgumentException("orderId cannot null");
         else if (orderId.isBlank())
-            throw new IllegalArgumentException("orderId cannot be blank");
+            throw new IllegalArgumentException("orderId cannot blank");
         if(instrument == null)
-            throw new IllegalArgumentException("instrument cannot be null");
+            throw new IllegalArgumentException("instrument cannot null");
         if(side == null)
-            throw new IllegalArgumentException("side cannot be null");
+            throw new IllegalArgumentException("side cannot null");
         if(price == null)
-            throw new IllegalArgumentException("price cannot be null");
+            throw new IllegalArgumentException("price cannot null");
         else if(price.compareTo(BigDecimal.ZERO) <= 0)
             throw new IllegalArgumentException("price should be greater than zero");
         if(quantity <= 0)
@@ -75,7 +75,7 @@ public class Order {
 
     public void transitionTo(OrderStatus newStatus) {
         if(newStatus == null)
-            throw new IllegalArgumentException("newStatus cannot be null");
+            throw new IllegalArgumentException("newStatus cannot null");
         if(OrderStatus.FILLED.equals(this.status) || OrderStatus.CANCELLED.equals(this.status))
             throw new IllegalStateException("an order cannot transition from terminal status");
         if(OrderStatus.PENDING.equals(this.status) && OrderStatus.PENDING.equals(newStatus))
@@ -92,7 +92,7 @@ public class Order {
         if(filledQuantity <=0)
             throw new IllegalArgumentException("filledQuantity should be greater than zero");
         if(filledQuantity > remainingQuantity)
-            throw new IllegalArgumentException("filledQuantity cannot be greater than remaining quantity");
+            throw new IllegalArgumentException("filledQuantity cannot greater than remaining quantity");
 
         this.remainingQuantity = remainingQuantity - filledQuantity;
     }
