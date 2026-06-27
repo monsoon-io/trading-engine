@@ -118,8 +118,8 @@ src/main/java/com/trading/engine/
 | Phase | Description | Status |
 |---|---|---|
 | 0 | Project skeleton, DB connectivity, health check | ✅ Complete |
-| 1 | Core domain model and order status state machine | 🔄 Next |
-| 2 | In-memory order matching engine (price-time priority) | ⬜ Pending |
+| 1 | Core domain model and order status state machine | ✅ Complete |
+| 2 | In-memory order matching engine (price-time priority) | 🔄 Next |
 | 3 | REST API (place, cancel, query orders) | ⬜ Pending |
 | 4 | PostgreSQL persistence with Flyway migrations | ⬜ Pending |
 | 5 | Accounts, portfolios, buying-power checks | ⬜ Pending |
